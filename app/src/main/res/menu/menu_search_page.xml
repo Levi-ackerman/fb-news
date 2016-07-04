@@ -8,10 +8,4 @@
           android:orderInCategory="100"
           app:showAsAction="never" />
 
-    <item android:id="@+id/action_search"
-          android:title="@string/app_name"
-          android:icon="@drawable/ic_search"
-          app:showAsAction="always"
-          app:iconifiedByDefault="true"
-          app:actionViewClass="android.support.v7.widget.SearchView" />
 </menu>
