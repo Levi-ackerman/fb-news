@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.project.levi.news.R;
+import com.project.levi.news.adapter.listener.OnItemSelectListener;
 import com.project.levi.news.adapter.viewholder.PageViewHolder;
 import com.project.levi.news.data.models.Page;
 
@@ -18,12 +19,17 @@ import java.util.List;
 public class PageAdapter extends RecyclerView.Adapter<PageViewHolder> {
 
     private List<Page> mPageList;
+    private OnItemSelectListener<Page> mOnItemSelectListener;
+
+    public PageAdapter(OnItemSelectListener<Page> onItemSelectListener) {
+        mOnItemSelectListener = onItemSelectListener;
+    }
 
     @Override
     public PageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.page_list_item,
                 parent, false);
-        return new PageViewHolder(view);
+        return new PageViewHolder(view, mOnItemSelectListener);
     }
 
     @Override

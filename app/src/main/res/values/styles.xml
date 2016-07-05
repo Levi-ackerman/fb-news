@@ -17,6 +17,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.NoActionBar.Detail">
+    </style>
+
     <style name="AppTheme.NoActionBar.FullScreen">
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
@@ -31,5 +34,6 @@
         <item name="searchIcon">@null</item>
 
     </style>
+
 
 </resources>

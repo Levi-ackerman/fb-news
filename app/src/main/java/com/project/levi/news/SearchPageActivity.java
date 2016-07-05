@@ -1,5 +1,6 @@
 package com.project.levi.news;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
@@ -17,6 +18,7 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.HttpMethod;
 import com.project.levi.news.adapter.PageAdapter;
+import com.project.levi.news.adapter.listener.OnItemSelectListener;
 import com.project.levi.news.common.ParseJsonUtils;
 import com.project.levi.news.common.Utils;
 import com.project.levi.news.data.models.Page;
@@ -30,7 +32,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SearchPageActivity extends AppCompatActivity implements
-        SearchView.OnQueryTextListener {
+        SearchView.OnQueryTextListener, OnItemSelectListener<Page> {
     private static final String TAG = "SearchPageActivity";
 
     @BindView(R.id.recycler_pages)
@@ -47,12 +49,10 @@ public class SearchPageActivity extends AppCompatActivity implements
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mPageAdapter = new PageAdapter();
+        mPageAdapter = new PageAdapter(this);
         mPagesRecycler.setLayoutManager(new LinearLayoutManager(this));
-        mPagesRecycler.addItemDecoration(new SimpleDividerItemDecoration((int) Utils
-                .convertDpToPixel
-                (16)));
         mPagesRecycler.setHasFixedSize(true);
+        mPagesRecycler.addItemDecoration(new SimpleDividerItemDecoration(this));
         mPagesRecycler.setAdapter(mPageAdapter);
 
     }
@@ -105,5 +105,11 @@ public class SearchPageActivity extends AppCompatActivity implements
     @Override
     public boolean onQueryTextChange(String newText) {
         return false;
+    }
+
+    @Override
+    public void onItemClick(Page page) {
+        Intent intent = new Intent(SearchPageActivity.this, PageDetailActivity.class);
+        startActivity(intent);
     }
 }
