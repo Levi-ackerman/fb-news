@@ -6,4 +6,5 @@
     <string name="title_activity_search_page">SearchPageActivity</string>
     <string name="search_label">Search</string>
     <string name="search_hint">Search Page</string>
+
 </resources>

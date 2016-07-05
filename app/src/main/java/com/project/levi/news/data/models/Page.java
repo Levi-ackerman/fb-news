@@ -8,6 +8,7 @@ public class Page {
     private String id;
     private String name;
     private String about;
+    private Picture mPicture;
 
     public String getId() {
         return id;
@@ -31,5 +32,13 @@ public class Page {
 
     public void setAbout(String about) {
         this.about = about;
+    }
+
+    public Picture getPicture() {
+        return mPicture;
+    }
+
+    public void setPicture(Picture picture) {
+        mPicture = picture;
     }
 }

@@ -17,12 +17,12 @@
         android:padding="@dimen/spacing_normal">
 
         <ImageView
+            android:id="@+id/img_avatar"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_gravity="center"
             android:scaleType="centerCrop"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/avatar"/>
+            android:contentDescription="@string/app_name"/>
 
         <TextView
             android:id="@+id/textName"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_small"
             android:gravity="center"
-            android:lines="4"
+            android:maxLines="4"
             android:ellipsize="end"
             android:textSize="@dimen/font_small"
             android:text="Android Developer Advocate at Google and Runner www.google.com/+IanLake"/>

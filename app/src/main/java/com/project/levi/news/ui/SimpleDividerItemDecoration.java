@@ -21,7 +21,7 @@ public class SimpleDividerItemDecoration extends RecyclerView.ItemDecoration {
             state) {
         int position = parent.getChildLayoutPosition(view);
         // Add top margin only for the first item to avoid double space between items
-        if (position == 0 || position == 1) {
+        if (position == 0) {
             outRect.top = mSpace;
         } else {
             outRect.top = 0;
