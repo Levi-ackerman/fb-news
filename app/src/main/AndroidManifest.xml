@@ -52,7 +52,7 @@
 
         <activity
             android:name=".PageDetailActivity"
-            android:theme="@style/AppTheme.NoActionBar.Detail">
+            android:theme="@style/MyAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

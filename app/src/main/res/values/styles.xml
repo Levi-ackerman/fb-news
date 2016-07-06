@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
     </style>
 
     <style name="ToolbarSearchView" parent="Base.ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -15,9 +15,6 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="AppTheme.NoActionBar.Detail">
     </style>
 
     <style name="AppTheme.NoActionBar.FullScreen">
@@ -32,8 +29,21 @@
     <style name="CustomSearchViewStyle" parent="Widget.AppCompat.SearchView">
         <!-- Change up icon -->
         <item name="searchIcon">@null</item>
-
     </style>
+
+    <!-- Base application theme. -->
+    <style name="MyAppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#3F51B5</item>
+        <!-- Light Indigo -->
+        <item name="colorPrimaryDark">#3949AB</item>
+        <!-- Dark Indigo -->
+        <item name="colorAccent">#00B0FF</item>
+        <!-- Blue -->
+    </style>
+
+    <style name="MyAppTheme" parent="MyAppTheme.Base"></style>
+
 
 
 </resources>
