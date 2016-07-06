@@ -9,6 +9,7 @@ public class Page {
     private String name;
     private String about;
     private Picture mPicture;
+    private Cover mCover;
 
     public String getId() {
         return id;
@@ -40,5 +41,13 @@ public class Page {
 
     public void setPicture(Picture picture) {
         mPicture = picture;
+    }
+
+    public Cover getCover() {
+        return mCover;
+    }
+
+    public void setCover(Cover cover) {
+        mCover = cover;
     }
 }

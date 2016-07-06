@@ -24,17 +24,16 @@ public class ParseJsonUtils {
         try {
             if (jsonObject.has("data")) {
                 JSONArray jsonArray = jsonObject.getJSONArray("data");
-                if(jsonArray != null && jsonArray.length() > 0){
+                if (jsonArray != null && jsonArray.length() > 0) {
                     JSONObject obj;
 
                     GsonBuilder builder = new GsonBuilder();
                     builder.registerTypeAdapter(Page.class, new PageDeserializer());
                     Gson gson = builder.create();
                     Page page;
-                    for(int i = 0; i < jsonArray.length(); i++){
+                    for (int i = 0; i < jsonArray.length(); i++) {
                         obj = jsonArray.getJSONObject(i);
                         page = gson.fromJson(obj.toString(), Page.class);
-                        System.out.println(page.getPicture().getUrl());
                         pageList.add(page);
                     }
                 }
@@ -43,5 +42,13 @@ public class ParseJsonUtils {
             e.printStackTrace();
         }
         return pageList;
+    }
+
+    public static Page parseJsonObjectPage(JSONObject jsonObject) {
+        GsonBuilder builder = new GsonBuilder();
+        builder.registerTypeAdapter(Page.class, new PageDeserializer());
+        Gson gson = builder.create();
+        Page page = gson.fromJson(jsonObject.toString(), Page.class);
+        return page;
     }
 }

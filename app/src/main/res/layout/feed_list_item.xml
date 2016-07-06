@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical"
+              app:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_normal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/list_avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar"/>
+
+        <TextView
+            android:id="@+id/list_name"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_toRightOf="@+id/list_avatar"
+            android:text="Alan Walker"
+            android:textAppearance="?attr/textAppearanceListItem"/>
+
+        <TextView
+            android:id="@+id/list_time_create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/list_name"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_toRightOf="@+id/list_avatar"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="12h30"
+            android:textAppearance="?attr/textAppearanceListItem"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/avatar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/spacing_normal"
+        android:paddingRight="@dimen/spacing_normal"
+        android:paddingTop="@dimen/spacing_small"
+        android:paddingBottom="@dimen/spacing_small">
+
+        <TextView
+            android:id="@+id/list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="On Slack and Brainwaves"
+            style="@style/TextAppearance.AppCompat.Title"/>
+
+        <TextView
+            android:id="@+id/list_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/list_title"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:text="Too many type sizes and styles at once can wreck any layout. A typographic scale has a limited set of type sizes that work well together along with the layout grid."
+            android:maxLines="4"
+            android:ellipsize="end"
+            style="@style/TextAppearance.AppCompat.Body1"/>
+
+        <View
+            android:id="@+id/list_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/list_caption"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:background="@color/divider"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/list_divider"
+            android:layout_marginTop="@dimen/spacing_normal">
+
+            <ImageView
+                android:id="@+id/list_btn_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_like"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/list_btn_like"
+                style="@style/TextAppearance.AppCompat.Caption"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

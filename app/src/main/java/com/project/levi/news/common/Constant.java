@@ -10,4 +10,5 @@ public class Constant {
 
     public static final String FACEBOOK_GRAPH_SEARCH = FACEBOOK_GRAPH + "search?";
 
+    public static final String KEY_PAGE_ID = "key_page_id";
 }

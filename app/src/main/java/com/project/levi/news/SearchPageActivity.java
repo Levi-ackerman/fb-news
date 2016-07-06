@@ -19,6 +19,7 @@ import com.facebook.GraphResponse;
 import com.facebook.HttpMethod;
 import com.project.levi.news.adapter.PageAdapter;
 import com.project.levi.news.adapter.listener.OnItemSelectListener;
+import com.project.levi.news.common.Constant;
 import com.project.levi.news.common.ParseJsonUtils;
 import com.project.levi.news.common.Utils;
 import com.project.levi.news.data.models.Page;
@@ -52,7 +53,7 @@ public class SearchPageActivity extends AppCompatActivity implements
         mPageAdapter = new PageAdapter(this);
         mPagesRecycler.setLayoutManager(new LinearLayoutManager(this));
         mPagesRecycler.setHasFixedSize(true);
-        mPagesRecycler.addItemDecoration(new SimpleDividerItemDecoration(this));
+        mPagesRecycler.addItemDecoration(new SimpleDividerItemDecoration(this, -1));
         mPagesRecycler.setAdapter(mPageAdapter);
 
     }
@@ -110,6 +111,7 @@ public class SearchPageActivity extends AppCompatActivity implements
     @Override
     public void onItemClick(Page page) {
         Intent intent = new Intent(SearchPageActivity.this, PageDetailActivity.class);
+        intent.putExtra(Constant.KEY_PAGE_ID, page.getId());
         startActivity(intent);
     }
 }
